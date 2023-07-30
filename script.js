@@ -9,7 +9,10 @@ let controls = document.querySelectorAll(".controls")
 setTimeout(()=>{
 	document.querySelector(".loaderBox1").style.display='none'
 },2000)
-swal.setActionValue({ confirm: 'Text from input' })
+
+if(!localStorage.getItem("user")){
+	localStorage.setItem("user", JSON.stringify({pass:""}))
+}else{}
 
 btnAdd.addEventListener("click",()=>{
 	ritem1 = document.querySelectorAll(".item")
