@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap');
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+body{
+	width: 100%;
+	height: 100vh;
+	background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 65%, rgba(0,98,255,1) 100%);
+display: flex;justify-content: center;align-items: center;
+}
+.todobox{
+	width: 500px;
+	min-height: 430;
+	background: #fff;
+	border-radius: 20px;
+/*	filter: drop-shadow(0px 10px 3px #333);*/
+	box-shadow: 0 1px 2px 1px #9999;
+}
+.createTobox{
+	height: 80px;width: 100%;
+	overflow-y: hidden;
+	box-shadow: 0 1px 2px 1px #9999;
+	border-radius: 20px;
+	padding: 5px 15px;
+}
+.createTobox input{
+	resize: none;
+	width: 85%;
+	box-shadow: 0 1px 2px 1px #9999;
+	border: 1px solid #06AEF8FF;
+	border-radius: 20px;
+	outline: none;
+	padding: 5px 10px;
+	font-size: 21px;
+	color:#06AEF8FF ;
+}
+.createTobox .btnAdd{
+	border: none;
+	padding: 12px 10px;
+	background: #0A5A75FF;
+	color: #fff;
+	border-radius: 20px;
+	width: 13%;
+	cursor: pointer;
+
+}
+.createTobox h1{
+	display: inline-block;
+	margin: 20px 15px;
+	color: #0A5A75FF;
+}
+.plus{
+	display: inline-block;
+	float:right;
+	margin: 18px 15px;
+	font-size:25px;
+	transition: 1s ease;
+	cursor: pointer;
+	padding: 10px 13px;
+	color: #0A5A75FF;
+	border-radius: 100%;
+}
+.plus:hover{
+	background:#06AEF8FF ;
+	color: #fff;
+	box-shadow: 0 0 12px 1px #06AEF8FF;
+}
+
+
+/*Result*/
+.resultTobox{
+	padding: 10px 15px;
+	height: 350px;
+	overflow: auto;
+}
+.item{
+	padding: 10px;
+	margin-bottom: 20px;
+	width: 100%;
+	min-height: 50px;
+	box-shadow: 0 1px 4px 3px #9999;
+	border-radius:25px;
+	cursor: pointer;
+	transition: 1s ease;
+	font-weight: 500;
+	font-size: 20px;
+	position: relative;
+	background: #54B1D31D;
+}
+.item:hover{
+	box-shadow: 0 1px 4px 3px #0F688EBE;
+}
+.controls{
+	position: absolute;
+	right: 10px;
+	top: 12px;
+	background: ;
+	border-radius: 5px;
+	z-index: 1056;
+	display: flex;
+}
+.controls span, .controls i{
+	transition: 1s ease;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+
+.dot3{
+	position:absolute;right: 15px;
+	top: 5px;
+	color: #5676EAFF;
+}
+.both{
+	clear: both;
+}
+.delete{
+	color: crimson;
+	transition: 1s ease;
+}
+
+.delete:hover{
+	background: crimson!important;
+	color: #fff;
+}
+
+.copy:hover{
+	background: grey;
+
+}
+.block{
+	display: block!important;
+	transition: 1s ease;
+}
+
+.open{
+	height: 150px!important;
+	transition: 1s ease;
+}
+.close{
+	height: 80px!important;
+	transition: 1s ease;
+}
+.closeDot{
+	display: none;
+	transition: 1s ease;
+}
+label{
+	cursor: pointer;
+}
+input[type="checkbox"]{
+	width: 20px;height: 20px;
+	cursor: pointer;
+	background: crimson;
+}
+input:checked ~ input[type="checkbox"] {
+  background-color: #2196F3;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 20px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #2196F3;
+  transition: 1s ease;
+  border-radius: 20px;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #13A4EBFF;
+}
+.infoLine{
+	text-decoration:line-through!important;
+}
+.true{
+	text-decoration: line-through;
+}
+.false{
+	text-decoration: none;
+}
