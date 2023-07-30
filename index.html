@@ -8,7 +8,32 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	
+	<div class="loaderBox1">
+		<div class="loader"></div>
+	</div>
+	<div class="loaderBox">
+		<!-- If not set password -->
+		<div class="password">
+			<h1>Set Pin Code</h1>
+			<label for="pass">Password</label><br>
+			<input type="password" class="pass" placeholder="Password (min 4)"><br>
+			<label for="passA">Password Again</label><br>
+			<input type="password" class="passA" pattern="[0-9]" placeholder="Password (Again)"><br>
+			<button class="passbtn" onclick="setPass()">
+				Set Pin Code 
+			</button>
+		</div>
+		<!-- If set Password -->
+		<div class="password1 password ">
+			<h1>Login</h1>
+			<label for="pass">Password</label><br>
+			<input type="password" class="pass1" placeholder="Password (min 4)"><br><br>
+			<button class="passbtn1" onclick="logPass()">
+				Login
+			</button>
+		</div>
+		<!-- End -->
+	</div>
 	<div class="todobox">
 		<div class="createTobox">
 			<h1>Rm To Do</h1>
@@ -18,12 +43,43 @@
 				<button class="btnAdd">Add</button>
 			</div>
 		</div>
+		<div style="display: flex; justify-content: space-evenly; border-bottom: 1px solid grey;">
+			<div class="filter ">
+				<i class="fa-regular fa-bars-filter filterI" style="color: #4cb4d6;"></i>
+				<span  id='all'>Tasks( <span class="lenI"></span> )</span>
+			</div>
+			
+			<div class="clear">
+				<button>Clear All</button>
+			</div>
+		</div>
 		<div class="both"></div>
+
 		<div class="resultTobox">
-		<br>		
+
+		</div>
+	</div>
+
+	<div class="editBox" style="transform: translateY(-100%);">
+		<div class="box">
+			<div class="headE"><h1>Edit text</h1></div>
+			<div class="middleE">
+				<textarea type="text" class="editInput" placeholder="WriteHere"></textarea>
+			</div>
+			<div class="footE">
+				<button class="backBtn">
+					Back
+				</button>
+				<button class="saveBtn">
+					Save
+				</button>
+			</div>
 		</div>
 	</div>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="script.js" async></script>
+	<script>
+		
+	</script>
 </body>
 </html>

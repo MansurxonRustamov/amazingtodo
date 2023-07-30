@@ -9,8 +9,8 @@ body{
 	width: 100%;
 	height: 100vh;
 	background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 65%, rgba(0,98,255,1) 100%);
-display: flex;justify-content: center;align-items: center;
+	background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 65%, rgba(0,98,255,1) 100%);
+	display: flex;justify-content: center;align-items: center;
 }
 .todobox{
 	width: 500px;
@@ -19,6 +19,7 @@ display: flex;justify-content: center;align-items: center;
 	border-radius: 20px;
 /*	filter: drop-shadow(0px 10px 3px #333);*/
 	box-shadow: 0 1px 2px 1px #9999;
+	transform: scale(0.8);
 }
 .createTobox{
 	height: 80px;width: 100%;
@@ -89,11 +90,54 @@ display: flex;justify-content: center;align-items: center;
 	font-weight: 500;
 	font-size: 20px;
 	position: relative;
-	background: #54B1D31D;
+	background: #fff;
 }
 .item:hover{
 	box-shadow: 0 1px 4px 3px #0F688EBE;
 }
+.loaderBox1{
+	background: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	z-index: 1095;
+	transition: 1.5s ease;
+}
+.loader{
+	width: 200px;
+	height: 200px;
+	border-radius: 100%;
+	border: 20px solid #06AEF8FF;
+	border-top-color:grey ;
+	filter:drop-shadow(0 0 20px #06AEF8FF);
+	animation: loader 3s infinite;
+}
+@keyframes loader{
+	100%{
+		transform: rotate(360deg);
+	}
+}
+
+.forget{
+	color: #06AEF8FF;
+	font-size: 15px;
+	cursor: pointer;
+}
+.loaderBox{
+	background: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	z-index: 1075;
+	transition: 1.5s ease;
+}
+
 .controls{
 	position: absolute;
 	right: 10px;
@@ -103,12 +147,14 @@ display: flex;justify-content: center;align-items: center;
 	z-index: 1056;
 	display: flex;
 }
-.controls span, .controls i{
+.controls span, .controls i, .controls div{
 	transition: 1s ease;
 	border-radius: 10px;
 	padding: 5px;
 }
-
+.controls div:hover{
+	background: grey;
+}
 
 .dot3{
 	position:absolute;right: 15px;
@@ -184,6 +230,9 @@ input:checked ~ input[type="checkbox"] {
 ::-webkit-scrollbar-thumb:hover {
   background: #13A4EBFF;
 }
+label{
+	text-transform: capitalize;
+}
 .infoLine{
 	text-decoration:line-through!important;
 }
@@ -192,4 +241,155 @@ input:checked ~ input[type="checkbox"] {
 }
 .false{
 	text-decoration: none;
+}
+.editBox{
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background: #30384193;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 20px;
+	z-index: 1065;
+	
+	transition:.5s ease;
+}
+.box{
+	width: 350px;
+	height: 400px;
+	background: #fff;
+	border-radius: 20px;
+	position: relative;
+}
+.headE, .footE{
+	height: 50px;
+	border-radius: 20px;
+	box-shadow: 0 0 3px 2px #999;
+}
+.headE h1{
+	display: inline-block;
+	margin: 5px 15px;
+	color: #0A5A75FF;
+}
+.footE{
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	width: 100%;
+}
+.footE button{
+	padding: 5px 35px;
+	margin: 5px;
+	height: 80%;
+	background: #13A4EBFF;
+	color: #fff;
+	position: absolute;
+	border: none;
+	border-radius: 20px;
+	cursor: pointer;
+}
+.footE button:first-child{
+	right:120px;
+}
+.footE button:nth-child(2){
+	right: 0;
+}
+.editInput{
+	margin: 5px;
+	height: 285px;
+	width: 97%;
+	outline: none;
+	font-size: 20px;
+	resize: none;
+	padding: 5px;
+	border:2px solid #13A4EBFF;
+	border-radius: 5px;
+}
+.filter{
+	padding: 10px 10px;
+	display: inline-block;
+	cursor: pointer;
+	font-size: 20px;
+	margin: 5px;
+}
+.filter .filterI{
+	font-size:20px;
+	margin-right: 5px;
+}
+.clear{
+	float: right;
+	display: inline-block;
+}
+.clear button{
+	margin: 10px;
+	padding: 5px 15px;
+	border-radius: 10px;
+	border:none;
+	background: crimson;
+	color: #fff;
+	cursor: pointer;
+	border: 1px solid crimson;
+	transition: 1s ease;
+	font-size: 18px;
+}
+.clear button:hover{
+	background: #fff;
+	color: crimson;
+}
+.modalF span{
+	transition: 1s ease;
+	padding: 10px 10px;
+	margin: 5px;
+	font-size: 20px;
+	display: inline-block;
+	cursor: pointer;
+}
+.active{
+	color: #13A4EBFF;
+	font-weight: bold;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.password, .password1{
+	width: 300px;
+	height: 300px;
+	box-shadow:0 0 3px 2px #999;
+	border-radius: 15px;
+	padding: 10px ;
+}
+.password h1{
+	text-align: center;
+	color: #13A4EBFF;
+}
+.password input{
+	width: 100%;
+	padding: 5px 10px;
+	font-size: 20px;
+	margin-top: 5px;
+	outline: none;
+	border:none;
+	border-bottom: 1px solid grey;
+}
+.password label{
+	color: #13A4EBFF;
+}
+.password button{
+	padding: 10px 15px;
+	width: 100%;
+	border-radius: 5px;
+	border: 1px solid #13A4EBFF;
+	background: #fff;
+	margin-top: 35px;
+	cursor: pointer;
+	font-size: 20px;
+	transition: 1s ease;
+}
+.password button:hover{
+	background: #13A4EBFF;
+	color: #fff;
 }
