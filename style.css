@@ -8,7 +8,7 @@
 body{
 	width: 100%;
 	height: 100vh;
-	background: #22262AFF;
+	background: #22262AD8;
 	display: flex;justify-content: center;align-items: center;
 }
 .todobox{
@@ -235,6 +235,14 @@ label{
 .infoLine{
 	text-decoration:line-through!important;
 }
+.bgG{
+	background: #13A4EBFF;
+	color: #fff;
+
+}
+.bgG:hover{
+	box-shadow: 0 0 3px 2px #13A4EBFF;
+}
 .true{
 	text-decoration: line-through;
 }
@@ -278,6 +286,7 @@ label{
 	display: flex;
 	width: 100%;
 }
+infoLine
 .footE button{
 	padding: 5px 35px;
 	margin: 5px;

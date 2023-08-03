@@ -94,11 +94,15 @@ function ritem2() {
 }
 function ritem3() {
 	for(let ib = 0;  ib < 1000; ib++){
+		datJs = JSON.parse(localStorage.getItem(`task${ib+1}`))
 		let ritemDiv = document.createElement("div")
 		ritemDiv.classList.add("item")
-		datJs = JSON.parse(localStorage.getItem(`task${ib+1}`))
+		if(datJs.status == "true"){
+			ritemDiv.classList.add("bgG")
+		}else{}
+
 		ritemDiv.id =`task${ib+1}`
-		ritemDiv.innerHTML = `<input ${datJs.status !="false"? "checked" : ""} type="checkbox"  id="task${ib+1}" class="checkmark" id="checkmark"> <label for="task${ib+1}" class="${datJs.status == "true" ? "infoLine" : ""}" >${datJs.name.slice(0, 26)}...</label> <div class="controls ">
+		ritemDiv.innerHTML = `<input ${datJs.status !="false"? "checked" : ""} type="checkbox"  id="task${ib+1}" class="checkmark" id="checkmark"> <label for="task${ib+1}" class="${datJs.status == "true" ? "infoLine" : ""}  " >${datJs.name.slice(0, 26)}...</label> <div class="controls ">
 					<span class="fa-light fa-copy copy"></span>
 					<div class="fa-light fa-pen pen" id="pen"></div>
 					<i class="fa-light fa-trash-can-xmark delete"></i>
@@ -109,6 +113,7 @@ function ritem3() {
 resultTobox.addEventListener("click", (e)=>{
 	if(e.target.nodeName == "LABEL"){
 		e.target.classList.toggle("infoLine")
+		e.target.parentNode.classList.toggle("bgG")
 		datJs1 = JSON.parse(localStorage.getItem(`${e.target.parentNode.id}`))
 
 		if(e.target.previousElementSibling.checked ==false){
@@ -122,7 +127,7 @@ resultTobox.addEventListener("click", (e)=>{
 
 	}else if(e.target.nodeName == "INPUT"){
 		e.target.nextElementSibling.classList.toggle("infoLine")
-
+		e.target.parentNode.classList.toggle("bgG")
 		datJs1 = JSON.parse(localStorage.getItem(`${e.target.parentNode.id}`))
 		if(e.target.checked ==true){
 			taskinfo2 = {id:datJs1.id, name:datJs1.name, status:"true"}
